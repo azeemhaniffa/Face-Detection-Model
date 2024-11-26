@@ -8,8 +8,8 @@ from keras.layers import GlobalAveragePooling2D, Dense, Dropout, BatchNormalizat
 from keras.optimizers import Adam
 
 
-genuine_dir = "C:/Users/ACER/Desktop/OPENCV_WISE_AI/TRAINING DATA/real_and_fake_face/training_real"
-spoof_dir = "C:/Users/ACER/Desktop/OPENCV_WISE_AI/TRAINING DATA/real_and_fake_face/training_fake"
+genuine_dir = "training_dir"
+spoof_dir = "training_dir"
 
 
 img_height, img_width = 224, 224
@@ -62,7 +62,7 @@ val_spoof = datagen.flow_from_directory(
 
 
 train_generator = datagen.flow_from_directory(
-    "C:/Users/ACER/Desktop/OPENCV_WISE_AI/TRAINING DATA/real_and_fake_face",
+    "training_dir",
     target_size=(img_height, img_width),
     batch_size=batch_size,
     class_mode='binary',
@@ -70,7 +70,7 @@ train_generator = datagen.flow_from_directory(
 )
 
 val_generator = datagen.flow_from_directory(
-    "C:/Users/ACER/Desktop/OPENCV_WISE_AI/TRAINING DATA/real_and_fake_face",
+    "training_dir",
     target_size=(img_height, img_width),
     batch_size=batch_size,
     class_mode='binary',
@@ -108,7 +108,7 @@ history = model.fit(
     validation_steps=val_generator.samples // batch_size
 )
 
-model.save('genuine_vs_spoof_classifier.h5')
+model.save('model.h5')
 
 plt.plot(history.history['accuracy'], label='accuracy')
 plt.plot(history.history['val_accuracy'], label='val_accuracy')
