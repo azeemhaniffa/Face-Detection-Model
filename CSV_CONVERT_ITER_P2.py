@@ -1,7 +1,7 @@
 import os
 import csv
 
-main_dir = "C:\\Users\\ACER\\Desktop\\WISE_AI_ASSIGNMENT_MOHAMED AZEEM BIN MOHAMED HANIFFA\\PART2_ANOMALY_DATA"
+main_dir = "placeholder"
 annotations = []
 
 categories = {
@@ -18,7 +18,7 @@ for category, conditions in categories.items():
                 main_label = category.split("_")[0]
                 annotations.append((filename, main_label, condition))
 
-csv_file = "P2_FINAL_DATA_ANOMALY.csv"
+csv_file = "data.csv"
 with open(csv_file, 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(["Image Name", "Main Label", "Sub Label"])
