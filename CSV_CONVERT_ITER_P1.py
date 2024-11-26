@@ -1,7 +1,7 @@
 import os
 import csv
 
-main_dir = "C:\\Users\\ACER\\Desktop\\WISE_AI_ASSIGNMENT_MOHAMED AZEEM BIN MOHAMED HANIFFA"
+main_dir = "placeholder"
 annotations = []
 
 for category in ["Genuine", "Spoof"]:
@@ -12,7 +12,7 @@ for category in ["Genuine", "Spoof"]:
             if filename.endswith(".jpg"):
                 annotations.append((filename, category, gender))
 
-csv_file = "P1_FACE_DATA_FINAL.csv"
+csv_file = "data.csv"
 with open(csv_file, 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(["Image Name", "Label", "Gender"])
