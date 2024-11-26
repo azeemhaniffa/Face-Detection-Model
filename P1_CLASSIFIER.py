@@ -6,9 +6,9 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
 
 
-model_path = r'C:\Users\ACER\Desktop\OPENCV_WISE_AI\genuine_vs_spoof_classifier.h5'
-test_dir = r'C:\Users\ACER\Desktop\OPENCV_WISE_AI\data-annotator-interview\PART1_face_data'
-results_path = r'C:\Users\ACER\Desktop\OPENCV_WISE_AI\predictions.csv'  
+model_path = r'model_dir.h5'
+test_dir = r'data_dir'
+results_path = r'predictions.csv'  
 
 
 model = load_model(model_path)
